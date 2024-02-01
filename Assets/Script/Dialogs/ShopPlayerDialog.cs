@@ -9,7 +9,6 @@ public class ShopPlayerDialog : MonoBehaviour {
 	public GameObject itemsPref;
 	public Text money;
 	public PanelRePlayDialog panelreplay;
-	//public RectTransform RangKing;
 	public GuiManager guimanager;
 
     public Transform playerState;
