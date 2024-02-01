@@ -58,7 +58,6 @@ public class PlayerController : MonoBehaviour
 				//reser lai time
 				timeToPlayerAutoRun = GameConstance.TimeToPlayerAutoRun;
 				timeToPlayerAutoRunNextStep = GameConstance.TimeToPlayerAutoRunNextStep;
-
 				PlayerState.Instance.playerCurrState = State.Live;
 			}
 			//=====================

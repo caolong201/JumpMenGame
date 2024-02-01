@@ -9,7 +9,7 @@ public class ShopPlayerDialog : MonoBehaviour {
 	public GameObject itemsPref;
 	public Text money;
 	public PanelRePlayDialog panelreplay;
-	public GuiManager guimanager;
+	
 
     public Transform playerState;
 	
@@ -36,6 +36,9 @@ public class ShopPlayerDialog : MonoBehaviour {
 		GameObject go =	AvGameObjectUtils.LoadGameObject (playerState, GameConstance.PathOfPlayerPrefabs+AvPlayerManager.Instance.CurrentPlayerID);
 		GuiManager.Instance.HideDialog (gameObject);
 		panelreplay.CheckShowIconNew ();
+
         //close dialog shop 
+     
+      
     }
 }

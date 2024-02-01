@@ -94,14 +94,20 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
     ///==========money=======
     public void InitMoney()
     {
-        //iTween.PunchScale(lblMoney.gameObject, new Vector3(.3f,.3f,1), 2f);
-        //iTween.ValueTo(gameObject, iTween.Hash(
-        //	"from",0,
-        //	"to",AvPlayerManager.Instance.Money,
-        //	"time", 1.5f,
-        //	"onupdate", "UpdateMoneyValue"
-        //	));
+        float initialMoney = AvPlayerManager.Instance.Money; 
+        DOTween.To(() => 0, x => UpdateMoneyValue(x), initialMoney, 1.5f);
+
+
     }
+
+    //iTween.PunchScale(lblMoney.gameObject, new Vector3(.3f, .3f, 1), 2f);
+    //iTween.ValueTo(gameObject, iTween.Hash(
+    //    "from", 0,
+    //    "to", AvPlayerManager.Instance.Money,
+    //    "time", 1.5f,
+    //    "onupdate", "UpdateMoneyValue"
+    //    ))
+
     void UpdateMoneyValue(float val)
     {
         lblMoney.text = ((int)val).ToString();
@@ -323,7 +329,6 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
     }
 
 }
-
 
 
 

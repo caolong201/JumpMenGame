@@ -57,8 +57,7 @@ public class PlatformManager : MonoBehaviour
 		if (countToCreateBarrier == 2) {
 			//tao barrier
 			newPlatform.GetComponent<PlatformItem> ().Init ();
-			countToCreateBarrier = 0;
-			
+			countToCreateBarrier = 0;	
 		}
 	}
 	int indexDown = 1;

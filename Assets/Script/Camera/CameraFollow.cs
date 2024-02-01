@@ -32,7 +32,7 @@ public class CameraFollow : MonoBehaviour {
 				//Debug.LogError("bgerbertb");
 				shouldPos = Vector3.Lerp (transform.position,target.transform.position,Time.deltaTime*12);
 				transform.position = new Vector3 (shouldPos.x, transform.position.z,.8f);
-				//transform.position = new Vector3 (target.transform.position.x, transform.position.z,.8f);
+				//transform.position = new Vector3(target.transform.position.x, transform.position.z, .8f);
 				if (PlayerState.Instance.playerCurrState == State.AutoRun)
 				{
 					
@@ -55,7 +55,8 @@ public class CameraFollow : MonoBehaviour {
 					if (CameraPos ==CameraPos.Right) {
 						CameraPos = CameraPos.Left;
 						targetAngle -= 60;//phai la So chia het cho 3 nhe
-					}
+                   
+                    }
 					else if (CameraPos == CameraPos.Left) {
 						CameraPos = CameraPos.Right;
 						targetAngle += 60;
@@ -64,7 +65,7 @@ public class CameraFollow : MonoBehaviour {
 				
 				//rotate camera
 				if (targetAngle != 0) {
-					Rotate ();
+					Rotate();
 					//Debug.LogWarning(targetAngle);
 				}
 				else
@@ -80,27 +81,27 @@ public class CameraFollow : MonoBehaviour {
 			if(PlayerState.Instance.isFistTap ==false)
 				transform.position = new Vector3 (target.transform.position.x, transform.position.z,.8f);
 		}
-			
+				
 	}
 	private void Rotate()
 	{
-		
-		float step = rSpeed * Time.deltaTime ;
+		float step = rSpeed * Time.deltaTime;
 		float orbitCircumfrance = 2F * rDistance * Mathf.PI;
 		float distanceDegrees = (rSpeed / orbitCircumfrance) * 360;
 		float distanceRadians = (rSpeed / orbitCircumfrance) * 2 * Mathf.PI;
-		
-		if (targetAngle>0)
+
+		if (targetAngle > 0)
 		{
 			transform.RotateAround(target.transform.position, Vector3.up, -rotationAmount);
 			targetAngle -= rotationAmount;
 		}
-		else if(targetAngle <0)
+		else if (targetAngle < 0)
 		{
 			transform.RotateAround(target.transform.position, Vector3.up, rotationAmount);
-			targetAngle += rotationAmount;
-		}
-		
+            targetAngle += rotationAmount;
+
+        }
+
 	}
 
 }
