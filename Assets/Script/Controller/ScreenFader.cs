@@ -78,9 +78,9 @@ public class ScreenFader : MonoBehaviour {
 		{
 			FadeImg.color = Color.black;
 			sceneEnding = false;
-			// ... reload the level
-			Application.LoadLevel(SceneNumber);
-			sceneStarting = true;
+            // ... reload the level
+            Application.LoadLevel(SceneNumber);
+            sceneStarting = true;
 		}
 			
 	}

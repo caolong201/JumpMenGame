@@ -37,10 +37,6 @@ public class ShopPlayerDialog : MonoBehaviour {
 		GameObject go =	AvGameObjectUtils.LoadGameObject (playerState, GameConstance.PathOfPlayerPrefabs+AvPlayerManager.Instance.CurrentPlayerID);
 		GuiManager.Instance.HideDialog (gameObject);
 		panelreplay.CheckShowIconNew ();
-
-	   //GuiManager.Instance.ShowDialog (gameObject);
-        //close dialog shop
-        //RangKing.DOLocalMoveY(0, 0.5f);
-       
+        //close dialog shop 
     }
 }

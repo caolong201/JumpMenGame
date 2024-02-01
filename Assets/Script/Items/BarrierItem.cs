@@ -22,6 +22,7 @@ public class BarrierItem : MonoBehaviour {
 					obj.transform.position = transform.position;
 			Destroy(gameObject);
 			Destroy(obj,1f);
+			
 		}
 
 		if (_vec3.y > _newVec3.y) 

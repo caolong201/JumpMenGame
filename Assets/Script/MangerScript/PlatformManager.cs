@@ -4,19 +4,21 @@ using System.Collections.Generic;
 
 public class PlatformManager : MonoBehaviour
 {
-
 	public static bool isCreateNewPlatform = false;
 	public GameObject[] platforms;
 	private int nextPos = -3;
 	private int index = 0;
 	private int countToCreateBarrier = 0;
 	private Transform player;
+
 	//const
 	float timePlatformdown = GameConstance.TimePlatformDown_Start;
 	public static  float newTimePlatfromdown = GameConstance.TimePlatformDown_Start;
 	float timePlatformAutodown = GameConstance.TimePlatformAutodown;
 	public static int countPos = 0;
 	int random ;
+
+
 	void Start ()
 	{ 
 		//random platforms

@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-
 		//truong hop player tu chay
 		if (PlayerState.Instance.playerCurrState == State.AutoRun) {
 			if (effectPlayerAutoRun != null && effectPlayerAutoRun.activeSelf == false)
@@ -110,14 +109,13 @@ public class PlayerController : MonoBehaviour
 				ScoreManager.Instance.IncreaseScore ();
 			}
 			startPos = transform.position;
-			
-				
+		
 		}
 
 		if (isMove) { //player di chuyen ve phia truoc
-				
 
-			transform.position += new Vector3 (.15f, 0, 0);
+
+			transform.position += new Vector3(.15f, 0, 0);
 			_distance = transform.position.x - startPos.x;
 			if (_distance >= 1) {
 				//play sound

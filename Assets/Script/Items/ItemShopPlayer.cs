@@ -46,8 +46,7 @@ public class ItemShopPlayer : MonoBehaviour {
 			btnBuy.SetActive(false);
 			checkIcon.SetActive(true);
 			//select item
-			SelectItem();
-			
+			SelectItem();			
 			AvPlayerManager.Instance.CurrentPlayerID = mId;
 			SaveDataManager.Instance.SaveValueWithKey (mId,1);
 			//tinh lai tien
@@ -59,15 +58,13 @@ public class ItemShopPlayer : MonoBehaviour {
 			//	"time", 0.5f,
 			//	"onupdate", "UpdateValue"
 			//	));
-
 			AvPlayerManager.Instance.Money = m;
 			GuiManager.Instance.InitMoney ();
 		}
 		else
 		{
             //ShowMessageBox.DG
-            //show message boxx
-          
+            //show message boxx      
             GuiManager.Instance.ShowBlackBolder();
 			GuiManager.Instance.ShowMessageBox("Infomation","Dont have enought money!\nYou can get money by Wacth movies!",MessageBoxType.OK,()=>{
 			});
