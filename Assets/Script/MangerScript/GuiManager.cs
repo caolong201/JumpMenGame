@@ -63,13 +63,8 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
     }
     public void InitScore()
     {
-        //iTween.PunchScale(lblScore.gameObject, new Vector3(.3f,.3f,1), 2f);
-        //iTween.ValueTo(gameObject, iTween.Hash(
-        //	"from",0,
-        //	"to",ScoreManager.Instance.Score,
-        //	"time", 1.5f,
-        //	"onupdate", "UpdateScoreValue"
-        //	));
+        float initalScore = ScoreManager.Instance.Score;
+        DOTween.To(() => 0, x => UpdateScoreValue(x), initalScore, 1.5f);
     }
     void UpdateScoreValue(float val)
     {
@@ -79,13 +74,9 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
     ///==========high score=======
     public void InitHighScore()
     {
-        //iTween.PunchScale(lblHighScore.gameObject, new Vector3(.3f,.3f,1), 2f);
-        //iTween.ValueTo(gameObject, iTween.Hash(
-        //	"from",0,
-        //	"to",ScoreManager.Instance.HighScore,
-        //	"time", 1.5f,
-        //	"onupdate", "UpdateHighScoreValue"
-        //	));
+        float initalHighScore = ScoreManager.Instance.HighScore;
+        DOTween.To(() => 0, x => UpdateHighScoreValue(x), initalHighScore, 1.5f);
+
     }
     void UpdateHighScoreValue(float val)
     {
@@ -96,18 +87,7 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
     {
         float initialMoney = AvPlayerManager.Instance.Money; 
         DOTween.To(() => 0, x => UpdateMoneyValue(x), initialMoney, 1.5f);
-
-
     }
-
-    //iTween.PunchScale(lblMoney.gameObject, new Vector3(.3f, .3f, 1), 2f);
-    //iTween.ValueTo(gameObject, iTween.Hash(
-    //    "from", 0,
-    //    "to", AvPlayerManager.Instance.Money,
-    //    "time", 1.5f,
-    //    "onupdate", "UpdateMoneyValue"
-    //    ))
-
     void UpdateMoneyValue(float val)
     {
         lblMoney.text = ((int)val).ToString();
@@ -169,8 +149,8 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
             Debug.LogError("Null ads icon");
             return;
         }
-        //iTween.MoveTo(iconAd,iTween.Hash("x",250,"islocal", true,"time",0.5f,"loopType","none"
-        //                                 ,"delay",1,"easeType","easeInOutQuad"));
+        //iTween.MoveTo(iconAd, iTween.Hash("x", 250, "islocal", true, "time", 0.5f, "loopType", "none"
+        //                                 , "delay", 1, "easeType", "easeInOutQuad"));
 
     }
     public void HideIconAds()
@@ -180,9 +160,10 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
             Debug.LogError("Null ads icon");
             return;
         }
-        //iTween.MoveTo(iconAd,iTween.Hash("x",600,"islocal", true,"time",0.5f,"loopType","none"
-        //                                 ,"delay",1,"easeType","easeInOutQuad"));
+        iconAd.transform.DOLocalMoveX(0, 0.25f);
 
+        //iTween.MoveTo(iconAd, iTween.Hash("x", 600, "islocal", true, "time", 0.5f, "loopType", "none"
+        //                                 , "delay", 1, "easeType", "easeInOutQuad"));
     }
 
     public void OnbtnAdClicked()
@@ -237,8 +218,7 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
         if (dialog.activeSelf == false)
             dialog.SetActive(true);
         dialog.transform.DOLocalMoveX(0, 0.25f);
-        //dialog.transform.localScale = Vector3.zero;
-        //        dialog.transform.DOScale(Vector3.one, time).SetDelay(delay).SetEase(Ease.OutBack);
+      
 
         //if(tween)
         //{
@@ -329,11 +309,6 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
     }
 
 }
-
-
-
-
-
 
 
 

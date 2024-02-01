@@ -18,8 +18,7 @@ public class ScoreManager : SingletonMono<ScoreManager> {
 			{
 				highScore = score;
 				isSavehighScore = true;
-			}
-				
+			}			
 		}
 		get
 		{
