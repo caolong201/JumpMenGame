@@ -7,6 +7,7 @@ public class PanelRePlayDialog : MonoBehaviour {
 	public GameObject btnFbOff,btnTwOff;
 	public GameObject btnFb, btnTw;
 	public GameObject iconNew;
+	public GameObject UpdateLater;
 	// Use this for initialization
 	public void Init()
 	{
@@ -20,6 +21,14 @@ public class PanelRePlayDialog : MonoBehaviour {
 
 		CheckShowIconNew ();
 	}
+
+	public void UpdateLatert()
+	{
+		UpdateLater.SetActive(true);
+
+	}
+
+
 	public void CheckShowIconNew()
 	{
 		if (iconNew != null)
@@ -39,10 +48,19 @@ public class PanelRePlayDialog : MonoBehaviour {
 			btnFbOff.SetActive (true);
 		}
 	}
-	/// <summary>
-	/// On button fbclicked.
-	/// </summary>
-	public void OnbtnShareTWClicked()
+    /// <summary>
+    /// On button fbclicked.
+    /// </summary>
+    /// 
+
+
+
+    public void ClosUpdateLatert()
+    {
+        UpdateLater.SetActive(false);
+
+    }
+    public void OnbtnShareTWClicked()
 	{
 		SoundManager.Instance.PlayButtonClick ();
 		if (NetworkManager.isInternetConneted ()) {

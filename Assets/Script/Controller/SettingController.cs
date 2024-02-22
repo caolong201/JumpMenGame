@@ -108,7 +108,7 @@ public class SettingController : MonoBehaviour {
 		{
 			BGMOff();
 		}
-		Debug.LogError(state);
+		Debug.LogError(state);		
 	}
 	void SoundOn()
 	{

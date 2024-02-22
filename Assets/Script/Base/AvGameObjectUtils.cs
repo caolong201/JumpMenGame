@@ -187,27 +187,37 @@ public static class AvGameObjectUtils
 		Vector2 p = A + u * (new Vector2 (B.x - A.x, B.y - A.y)) + v * (new Vector2 (C.x - A.x, C.y - A.y));
 		return p;
 	}
-	public static Texture2D LoadTexture2D(string path)
-	{
-		Texture2D tex = UnityEditor.AssetDatabase.LoadAssetAtPath<Texture2D> (path);
-		if (tex == null)
-			Debug.LogError ("Khong tim thay " + path);
-		return tex;
-	}
-	public static GameObject LoadPrefabInAsset (Transform parent, string name)
-	{
-		GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath (name, typeof(GameObject)) as GameObject;
-		if (prefab == null) {
-			Debug.LogError ("Cannot load asset at path " + name);
-			return null;
-		}
-		GameObject go = (GameObject)GameObject.Instantiate (prefab, Vector3.zero, Quaternion.identity);
-		go.transform.parent = parent;
-		go.transform.localPosition = Vector3.zero;
-		go.transform.localRotation = Quaternion.identity;
-		go.transform.localScale = Vector3.one;
-		return go;
-	}
+
+
+
+
+
+	//public static Texture2D LoadTexture2D(string path)
+	//{
+	//	Texture2D tex = UnityEditor.AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+	//	if (tex == null)
+	//		Debug.LogError("Khong tim thay " + path);
+	//	return tex;
+	//}
+
+
+
+
+	//public static GameObject LoadPrefabInAsset(Transform parent, string name)
+	//{
+	//	GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath(name, typeof(GameObject)) as GameObject;
+	//	if (prefab == null)
+	//	{
+	//		Debug.LogError("Cannot load asset at path " + name);
+	//		return null;
+	//	}
+	//	GameObject go = (GameObject)GameObject.Instantiate(prefab, Vector3.zero, Quaternion.identity);
+	//	go.transform.parent = parent;
+	//	go.transform.localPosition = Vector3.zero;
+	//	go.transform.localRotation = Quaternion.identity;
+	//	go.transform.localScale = Vector3.one;
+	//	return go;
+	//}
 
 	public static Sprite LoadSpriteInAsset (string path)
 	{
@@ -218,14 +228,14 @@ public static class AvGameObjectUtils
 		return tex;
 	}
 
-	public static TextAsset LoadTextInAsset (string path)
-	{
-		//Debug.Log(path);
-		TextAsset ret = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset> (path);
-		if (ret == null)
-			Debug.LogError ("Khong tim thay " + path);
-		return ret;
-	}
+	//public static TextAsset LoadTextInAsset (string path)
+	//{
+	//	//Debug.Log(path);
+	//	TextAsset ret = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset> (path);
+	//	if (ret == null)
+	//		Debug.LogError ("Khong tim thay " + path);
+	//	return ret;
+	//}
 
 
    

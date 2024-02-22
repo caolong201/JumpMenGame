@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 using DG.Tweening;
-using System.Diagnostics.Eventing.Reader;
+//using System.Diagnostics.Eventing.Reader;
 
 public enum DirecShowDialog
 {
@@ -15,6 +15,7 @@ public enum DirecShowDialog
 }
 public class GuiManager : SingletonMonoAwake<GuiManager>
 {
+
 
     public GameObject iconAd;
     public ScreenFader fader;
@@ -61,6 +62,11 @@ public class GuiManager : SingletonMonoAwake<GuiManager>
             ShowPanelRePlay();
         }
     }
+
+
+  
+
+
     public void InitScore()
     {
         float initalScore = ScoreManager.Instance.Score;
